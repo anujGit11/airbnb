@@ -35,6 +35,13 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginDto loginDto){
 
+//        while login, request will come from client(Postman) to Controller
+//        In controller, it takes json content into loginDto with the help of @RequestBody,
+//        now from controller it will go to userService ,
+//        userService will gets the actual record from Db and it compares the raw and encrypted password
+//        if it trues then it will generates the token in JWTSERVICE
+        //JWT Service will return the token to userService and it returns to Controller
+
         String token = userService.verifyLogin(loginDto);
         if(token!=null){
             TokenResponse tokenResponse = new TokenResponse();

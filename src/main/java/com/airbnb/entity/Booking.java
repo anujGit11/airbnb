@@ -2,6 +2,8 @@ package com.airbnb.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "booking")
 public class Booking {
@@ -17,6 +19,11 @@ public class Booking {
     private Integer totalPrice;
 
 
+//    @Column(name = "check_in_date")
+//    private LocalDate checkInDate;
+//
+//    @Column(name = "check_out_date")
+//    private LocalDate checkOutDate;
 
     @ManyToOne
     @JoinColumn(name = "property_user_id")
